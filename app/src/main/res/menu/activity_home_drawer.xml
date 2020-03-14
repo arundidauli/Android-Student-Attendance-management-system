@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_search"
+            android:icon="@drawable/ic_search"
+            android:title="Advance Search" />
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_exit_to_app"
+            android:title="Login" />
+        <item
+            android:id="@+id/nav_register"
+            android:icon="@drawable/ic_account"
+            android:title="Register" />
+        <item
+            android:id="@+id/nav_shop"
+            android:icon="@mipmap/shopping"
+            android:title="Shop" />
+    </group  >
+
+    <group android:visible="true">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@drawable/ic_menu_share"
+            android:title="Share" />
+    </group>
+</menu>
