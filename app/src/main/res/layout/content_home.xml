@@ -7,16 +7,157 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/app_bar_home">
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
+                <ImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@mipmap/sky"
+                    android:scaleType="centerCrop"
+                    android:foreground="#AA121111" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/notosans"
+                    android:padding="@dimen/padding_4sp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_above="@+id/card_search"
+                    android:text="Search From Mobile Numbers"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardElevation="@dimen/padding_4sp"
+                    app:cardCornerRadius="14dp"
+                    android:layout_marginLeft="@dimen/padding_8dp"
+                    android:layout_marginRight="@dimen/padding_8dp"
+                    android:layout_centerInParent="true"
+                    app:cardUseCompatPadding="true">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding_8dp"
+                            android:paddingBottom="@dimen/padding_8dp"
+                            android:paddingLeft="14dp"
+                            android:tint="@color/black"
+                            android:layout_gravity="center_vertical"
+                            app:srcCompat="@drawable/ic_search"
+                            android:paddingStart="14dp"
+                            android:contentDescription="@string/app_name" />
+                        <EditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="@dimen/padding_8dp"
+                            android:paddingBottom="@dimen/padding_8dp"
+                            android:paddingLeft="16dp"
+                            android:layout_gravity="center_vertical"
+                            android:textSize="12sp"
+                            android:singleLine="true"
+                            android:fontFamily="@font/notosans"
+                            android:hint="Search by keywords"
+                            android:background="@null"
+                            android:paddingStart="16dp" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/txt_go_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    android:fontFamily="@font/helvetica"
+                    android:layout_below="@+id/card_search"
+                    android:layout_centerHorizontal="true"
+                    android:padding="@dimen/padding_8dp"
+                    android:background="@drawable/share_background"
+                    android:textSize="18sp"/>
+
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_8dp"
+                android:paddingTop="@dimen/padding_8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/notosans"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Categories"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_8dp"
+                android:paddingRight="@dimen/padding_8dp"
+                />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="@dimen/padding_8dp"
+                app:cardElevation="3sp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginRight="16dp">
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding_4sp"
+                    android:textSize="12sp"
+                    android:textColor="@color/white"
+                    android:background="@color/colorPrimaryDark"
+                    android:textAllCaps="false"
+                    android:text="View All Category"/>
+            </androidx.cardview.widget.CardView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_8dp"
+                android:paddingTop="@dimen/padding_8dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/notosans"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="Latest"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_latest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_8dp"
+                android:paddingRight="@dimen/padding_8dp"
+                />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
 
 
 

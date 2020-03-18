@@ -20,15 +20,15 @@ import java.util.Objects;
 
 import es.dmoral.toasty.Toasty;
 
-public class Login extends AppCompatActivity {
-    private static String TAG = Login.class.getSimpleName();
+public class UserLogin extends AppCompatActivity {
+    private static String TAG = UserLogin.class.getSimpleName();
     private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        context=Login.this;
+        context= UserLogin.this;
         findViewById(R.id.btn_login).setOnClickListener(v -> {
             show_dialog();
         });
@@ -62,12 +62,7 @@ public class Login extends AppCompatActivity {
         EditText user_id = dialog.findViewById(R.id.user_id);
         EditText user_password = dialog.findViewById(R.id.user_password);
         Button btn_save = dialog.findViewById(R.id.btn_save);
-
-
-
         btn_save.setOnClickListener(v -> {
-
-
             if (user_id.getText().toString().length()<6){
                 Toasty.error(getApplicationContext(),"Enter a valid User Id", Toast.LENGTH_SHORT,true).show();
             }else if(user_password.getText().toString().length()<6){
@@ -80,9 +75,6 @@ public class Login extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
-
-
-
         });
 
         dialog.show();

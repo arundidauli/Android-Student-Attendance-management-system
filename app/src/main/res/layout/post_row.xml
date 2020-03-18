@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/padding_8dp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="2sp">
+
+    <RelativeLayout
+        android:id="@+id/rl_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+        <ImageView
+            android:id="@+id/post_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/sapna"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_below="@id/post_image"
+            android:paddingLeft="@dimen/padding_8dp"
+            android:paddingRight="@dimen/padding_8dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/notosans"
+            android:paddingTop="@dimen/padding_8dp"
+            android:lineSpacingExtra="@dimen/padding_4sp"
+            android:text="@string/post_title"/>
+
+        <TextView
+            android:id="@+id/post_detail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/post_title"
+            android:lineSpacingExtra="6sp"
+            android:maxLines="3"
+            android:paddingTop="@dimen/padding_4sp"
+            android:fontFamily="@font/notosans"
+            android:paddingLeft="@dimen/padding_8dp"
+            android:paddingRight="@dimen/padding_8dp"
+            android:text="@string/post_details" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/padding_8dp"
+            android:paddingRight="@dimen/padding_8dp"
+            android:paddingTop="@dimen/padding_8dp"
+            android:layout_marginBottom="@dimen/padding_8dp"
+            android:layout_below="@id/post_detail">
+
+            <TextView
+                android:id="@+id/user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_4sp"
+                android:fontFamily="@font/notosans"
+                android:textSize="12sp"
+                android:text="By Arun Kumar"/>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_4sp"
+                android:fontFamily="@font/notosans"
+                android:textSize="12sp"
+                android:gravity="end"
+                android:layout_gravity="end"
+                android:text="20-Mar-2020"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

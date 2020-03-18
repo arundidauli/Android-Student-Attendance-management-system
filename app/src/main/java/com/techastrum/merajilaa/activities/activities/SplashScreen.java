@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 
 import com.techastrum.merajilaa.R;
+import com.techastrum.merajilaa.activities.Util.Constants;
 
 public class SplashScreen extends AppCompatActivity {
 
@@ -22,6 +23,6 @@ public class SplashScreen extends AppCompatActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
-        },3000);
+        }, Constants.SPLASH_TIME);
     }
 }

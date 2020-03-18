@@ -16,8 +16,7 @@
     <string name="go_to_settings">Go to setting</string>
     <string name="action_settings">Setting</string>
     <string name="title_activity_home">HomeActivity</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+
     <string name="nav_header_title">Android Studio</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
@@ -28,4 +27,20 @@
 
     <string name="home_second">Home Second</string>
     <string name="select_your_area">Select Your Area</string>
+    <string name="about_us">About us</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="share">Share</string>
+    <string name="other">Other</string>
+    <string name="shop">Shop</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+    <string name="advance_search">Advance Search</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="openDrawer">open_drawer</string>
+    <string name="closeDrawer">close_drawer</string>
+    <string name="title_activity_navigation_drawer">NavigationDrawer</string>
+    <string name="post_details">सपना चौधरी के Husband के बारे में जाने सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी के Husband के बारे में जाने सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में</string>
+    <string name="post_title">सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में</string>
 </resources>

@@ -11,25 +11,35 @@
         <item
             android:id="@+id/nav_search"
             android:icon="@drawable/ic_search"
-            android:title="Advance Search" />
+            android:title="@string/advance_search" />
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_exit_to_app"
-            android:title="Login" />
+            android:title="@string/login" />
         <item
             android:id="@+id/nav_register"
             android:icon="@drawable/ic_account"
-            android:title="Register" />
+            android:title="@string/register" />
         <item
             android:id="@+id/nav_shop"
             android:icon="@mipmap/shopping"
-            android:title="Shop" />
-    </group  >
+            android:title="@string/shop" />
+    </group >
+    <item android:title="@string/other">
+        <menu>
+            <item
+                android:id="@+id/nav_about_us"
+                android:icon="@drawable/ic_about_us"
+                android:title="@string/about_us" />
+            <item
+                android:id="@+id/nav_privacy_policy"
+                android:icon="@drawable/ic_privacy"
+                android:title="@string/privacy_policy" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+        </menu>
+    </item>
 
-    <group android:visible="true">
-        <item
-            android:id="@+id/nav_share"
-            android:icon="@drawable/ic_menu_share"
-            android:title="Share" />
-    </group>
 </menu>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.activities.Login">
+    tools:context=".activities.activities.UserLogin">
 
         <LinearLayout
             android:layout_width="match_parent"

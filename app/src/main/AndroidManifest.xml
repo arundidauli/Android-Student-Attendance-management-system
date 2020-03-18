@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activities.activities.Login"></activity>
+        <activity android:name=".activities.activities.ShopActivity"></activity>
+        <activity android:name=".activities.activities.AdvanceSearch" />
+        <activity android:name=".activities.activities.UserLogin" />
         <activity android:name=".activities.activities.AddPost" />
         <activity android:name=".activities.activities.DetailActivity" />
         <activity

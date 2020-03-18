@@ -39,10 +39,10 @@ public class LatestAdapter extends RecyclerView.Adapter<LatestAdapter.MyViewHold
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.work_name.setText(categoryList.get(position).getCategory_name());
+       /* holder.work_name.setText(categoryList.get(position).getCategory_name());
         Glide.with(context).load(categoryList.get(position).getUrl())
                 .placeholder(R.mipmap.sky)
-                .into(holder.image_latest);
+                .into(holder.image_latest);*/
 
 
     }
@@ -62,6 +62,6 @@ public class LatestAdapter extends RecyclerView.Adapter<LatestAdapter.MyViewHold
     }
     @Override
     public int getItemCount() {
-        return categoryList.size();
+        return 20;
     }
 }

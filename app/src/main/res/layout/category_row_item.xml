@@ -8,6 +8,7 @@
     app:cardUseCompatPadding="true"
     app:cardElevation="6sp">
     <RelativeLayout
+        android:id="@+id/rl_category"
         android:layout_width="match_parent"
         android:layout_height="90dp"
         android:layout_gravity="center">
