@@ -6,7 +6,7 @@
     app:cardCornerRadius="@dimen/padding_8dp"
     android:layout_gravity="center"
     app:cardUseCompatPadding="true"
-    app:cardElevation="6sp">
+    app:cardElevation="3sp">
     <RelativeLayout
         android:id="@+id/rl_category"
         android:layout_width="match_parent"
@@ -16,7 +16,7 @@
             android:id="@+id/category_icon"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:src="@mipmap/fire"
+            android:src="@mipmap/abc"
             android:padding="@dimen/padding_8dp"
             android:layout_centerHorizontal="true"
             android:contentDescription="@string/app_name" />

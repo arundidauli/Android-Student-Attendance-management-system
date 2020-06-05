@@ -15,15 +15,11 @@
         <item
             android:id="@+id/nav_login"
             android:icon="@drawable/ic_exit_to_app"
-            android:title="@string/login" />
-        <item
-            android:id="@+id/nav_register"
-            android:icon="@drawable/ic_account"
-            android:title="@string/register" />
+            android:title="User Profile" />
         <item
             android:id="@+id/nav_shop"
-            android:icon="@mipmap/shopping"
-            android:title="@string/shop" />
+            android:icon="@drawable/ic_account_balance"
+            android:title="Admin" />
     </group >
     <item android:title="@string/other">
         <menu>

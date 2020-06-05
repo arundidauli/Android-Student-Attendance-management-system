@@ -1,131 +1,196 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.activities.AddPost">
-
+    tools:context=".activities.student_attandence.AddStudent">
     <LinearLayout
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textAlignment="center"
-            android:textColor="@color/black"
-            android:padding="@dimen/padding_8dp"
-            android:text="Upload Your Post"
-            android:gravity="center_horizontal" />
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
         <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:scaleType="centerCrop"
-            android:src="@color/colorAccent"
-            android:contentDescription="@string/app_name" />
-
-        <TextView
-            android:id="@+id/car_name"
+            android:id="@+id/btn_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/notosans"
-            android:padding="@dimen/padding_8dp"
-            android:layout_marginTop="@dimen/padding_8dp"
-            android:layout_marginBottom="@dimen/padding_4sp"
-            android:text="Upload Image"
-            android:layout_gravity="right"
-            android:background="@drawable/price_background"
-            android:textColor="@color/black"
-            />
-
-        <EditText
-            android:id="@+id/et_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-
-            android:background="@drawable/et_background"
-            android:ems="10"
-            android:fontFamily="@font/notosans"
-            android:hint="Heading"
-            android:inputType="textPersonName"
             android:padding="16dp"
-            android:textColor="@color/black"
-            />
-        <EditText
-            android:id="@+id/et_detail"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:textAlignment="textStart"
-            android:background="@drawable/et_background"
-            android:ems="10"
-            android:fontFamily="@font/notosans"
-            android:hint="Details"
-            android:inputType="textPersonName"
-            android:padding="16dp"
-            android:textColor="@color/black"
-            android:gravity="start" />
-        <EditText
-            android:id="@+id/et_number"
-            android:layout_width="match_parent"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_arrow_back"
+            android:contentDescription="@string/app_name" />
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-
-            android:background="@drawable/et_background"
-            android:ems="10"
-            android:fontFamily="@font/notosans"
-            android:hint="Phone Number"
-            android:inputType="number"
             android:padding="16dp"
-            android:textColor="@color/black"
-            />
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ll"
-            android:layout_marginLeft="50dp"
-            android:layout_marginRight="50dp"
-            android:layout_marginTop="16dp"
-            app:cardCornerRadius="8dp"
-            app:cardElevation="4sp"
-            app:cardUseCompatPadding="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="parent"
-            app:layout_constraintStart_toEndOf="parent">
-
-            <Button
-                android:id="@+id/btn_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/colorPrimary"
-                android:fontFamily="@font/notosans"
-                android:text="Save"
-                android:textAllCaps="false"
-                android:textColor="@color/white"
-                android:textStyle="bold" />
-
-        </androidx.cardview.widget.CardView>
-
+            android:text="Add Student"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
 
     </LinearLayout>
 
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/toolbar"
+        android:fillViewport="true">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <EditText
+                android:id="@+id/et_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:focusableInTouchMode="false"
+                android:background="@drawable/et_background"
+                android:ems="10"
+                android:fontFamily="@font/notosans"
+                android:hint="Select Class"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                />
 
 
 
-</androidx.core.widget.NestedScrollView>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/padding_8dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:cardElevation="@dimen/padding_4sp"
+                    app:cardCornerRadius="14dp"
+                    android:layout_gravity="center_horizontal"
+                    app:cardUseCompatPadding="true">
+                    <ImageView
+                        android:id="@+id/post_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:scaleType="centerCrop"
+                        android:src="@color/colorAccent"
+                        android:contentDescription="@string/app_name" />
+
+                </androidx.cardview.widget.CardView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/padding_8dp"
+                    android:layout_centerVertical="true"
+                    android:text="Upload Student Image"
+                    android:layout_toRightOf="@+id/card"
+                    android:paddingStart="@dimen/padding_8dp" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab_upload"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_file_upload"
+                    android:tint="@color/white"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/padding_4sp"
+                    android:layout_alignParentRight="true" />
+
+            </RelativeLayout>
+
+
+            <EditText
+                android:id="@+id/et_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/et_background"
+                android:ems="10"
+                android:fontFamily="@font/notosans"
+                android:hint="Student Name"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/et_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/et_background"
+                android:ems="10"
+                android:fontFamily="@font/notosans"
+                android:hint="Student father name"
+                android:inputType="textMultiLine"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                />
+            <EditText
+                android:id="@+id/et_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/et_background"
+                android:ems="10"
+                android:fontFamily="@font/notosans"
+                android:hint="Student Roll No"
+                android:inputType="number"
+                android:padding="16dp"
+                android:textColor="@color/black"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4sp"
+                app:cardUseCompatPadding="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="parent">
+
+                <Button
+                    android:id="@+id/btn_save_post"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:fontFamily="@font/notosans"
+                    android:text="@string/submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textStyle="bold" />
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+
+</RelativeLayout>

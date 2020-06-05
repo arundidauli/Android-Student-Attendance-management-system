@@ -10,6 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -17,16 +18,179 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:tint="@color/black"
-            app:srcCompat="@drawable/ic_home"
+            android:tint="@color/white"
+            app:srcCompat="@drawable/ic_arrow_back"
             android:contentDescription="@string/app_name" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:padding="16dp"
-            android:text="Post Detail"
-            android:textColor="@color/black"
+            android:text="Ad Details"
+            android:textColor="@color/white"
             android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_above="@+id/ll_bottom"
+       android:scrollbars="none">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent">
+
+           <ImageView
+               android:id="@+id/image_ad"
+               android:layout_width="match_parent"
+               android:layout_height="160dp"
+               android:scaleType="fitXY"
+               android:foreground="@drawable/background_black_gradation"
+               android:src="@mipmap/sky"/>
+
+           <androidx.cardview.widget.CardView
+               android:id="@+id/card"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               app:cardUseCompatPadding="true"
+               app:cardElevation="3sp"
+               android:layout_below="@+id/image_ad">
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:padding="@dimen/padding_8dp">
+                   <TextView
+                       android:id="@+id/txt_category_name"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Social Service"
+                       android:fontFamily="@font/proximanovaregular"
+                       android:padding="@dimen/padding_8dp"
+                       android:textColor="@color/black"/>
+                   <TextView
+                       android:id="@+id/title"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/padding_4sp"
+                       android:layout_below="@+id/txt_category_name"
+                       android:textStyle="bold"
+                       android:fontFamily="@font/proximanovaregular"
+                       android:textColor="@color/black" />
+                   <TextView
+                       android:id="@+id/details"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content"
+                       android:padding="@dimen/padding_8dp"
+                       android:layout_below="@+id/title"
+                       android:fontFamily="@font/proximanovaregular" />
+
+                   <LinearLayout
+                       android:id="@+id/txt_date"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/details"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+                       <ImageView
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:tint="@color/colorPrimaryDark"
+                           android:padding="@dimen/padding_8dp"
+                           app:srcCompat="@drawable/ic_date"/>
+                       <TextView
+                           android:id="@+id/txt_date_time"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:padding="@dimen/padding_8dp"
+                           android:text="Dec 2,2019"
+                           android:fontFamily="@font/proximanovaregular"/>
+
+                   </LinearLayout>
+
+
+
+                   <LinearLayout
+                       android:id="@+id/location"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_below="@+id/txt_date"
+                       android:gravity="center_vertical"
+                       android:orientation="horizontal">
+                       <ImageView
+                           android:layout_width="40dp"
+                           android:layout_height="40dp"
+                           android:padding="@dimen/padding_8dp"
+                           android:tint="@color/colorPrimaryDark"
+                           app:srcCompat="@drawable/ic_my_location"/>
+                       <TextView
+                           android:id="@+id/txt_location"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:padding="@dimen/padding_4sp"
+                           android:text="Moradabad"
+                           android:fontFamily="@font/proximanovaregular"/>
+
+                   </LinearLayout>
+               </RelativeLayout>
+
+           </androidx.cardview.widget.CardView>
+
+           <TextView
+               android:id="@+id/related"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Related"
+               android:padding="@dimen/padding_8dp"
+               android:fontFamily="@font/proximanovaregular"
+               android:layout_below="@id/card"/>
+
+           <androidx.recyclerview.widget.RecyclerView
+               android:id="@+id/rv_related"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_below="@+id/related"/>
+       </RelativeLayout>
+
+   </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/send_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Send Message"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:drawableStart="@drawable/ic_email"
+            android:textAlignment="center"
+            android:drawableTint="@color/white"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_email" />
+        <View
+            android:layout_width="1sp"
+            android:layout_height="match_parent"
+            android:background="@color/white"/>
+        <TextView
+            android:id="@+id/call_now"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_call"
+            android:text="Call Now"
+            android:drawableTint="@color/white"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:drawableLeft="@drawable/ic_call" />
 
     </LinearLayout>
 </RelativeLayout>

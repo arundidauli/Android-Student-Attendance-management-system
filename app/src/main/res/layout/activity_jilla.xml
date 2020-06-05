@@ -1,34 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    tools:context=".activities.activities.JillaActivity">
+    android:orientation="vertical"
+    tools:context=".activities.activities.DistActivity">
 
     <ImageView
         android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="100dp"
-        android:layout_marginTop="100dp"
-        android:src="@mipmap/logo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:src="@mipmap/logo" />
 
     <TextView
         android:id="@+id/txt_select"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="@dimen/padding_8dp"
         android:text="@string/select_your_area"
         android:padding="@dimen/padding_8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logo" />
+        android:layout_below="@+id/logo"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        android:fontFamily="@font/proximanovaregular"/>
 
-    <com.jaredrummler.materialspinner.MaterialSpinner
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/padding_8dp"
+        android:paddingRight="@dimen/padding_8dp"
+        android:layout_above="@+id/card"
+        android:layout_below="@+id/txt_select"
+        />
+
+    <!--<com.jaredrummler.materialspinner.MaterialSpinner
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -39,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txt_select" />
-
+-->
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
         android:layout_width="match_parent"
@@ -47,10 +54,8 @@
         android:layout_marginTop="16dp"
         app:cardCornerRadius="8dp"
         app:cardElevation="4sp"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+       app:cardUseCompatPadding="true"
+        android:layout_alignParentBottom="true">
 
     <Button
         android:id="@+id/btn_save"
@@ -66,4 +71,4 @@
     </androidx.cardview.widget.CardView>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    tools:context=".activities.activities.ui.gallery.GalleryFragment">
+    android:gravity="center">
 
     <TextView
         android:id="@+id/text_gallery"

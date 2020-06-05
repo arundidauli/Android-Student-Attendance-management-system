@@ -52,14 +52,16 @@
                 android:fontFamily="@font/notosans"
                 android:layout_marginTop="@dimen/padding_8dp"
                 android:padding="16dp"/>
+
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:fontFamily="@font/notosans"
                 android:layout_marginTop="@dimen/padding_8dp"
-                android:padding="16dp"/>
+                android:fontFamily="@font/notosans"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="16dp" />
             <androidx.cardview.widget.CardView
                 android:id="@+id/card"
                 android:layout_width="match_parent"

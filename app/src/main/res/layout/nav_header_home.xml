@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="100dp"
         android:layout_gravity="center"
-        android:src="@mipmap/logo"
+        android:src="@mipmap/abc"
         android:contentDescription="@string/app_name" />
 
     <TextView

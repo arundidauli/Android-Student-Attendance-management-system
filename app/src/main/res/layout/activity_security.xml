@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.activities.SecurityActivity">
+
+  <TextView
+      android:id="@+id/txt_title"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Security Code"
+      android:textSize="24sp"
+      android:textColor="@color/black"
+      android:layout_centerHorizontal="true"
+      android:fontFamily="@font/proximanovaregular"
+      android:textStyle="bold"
+      android:layout_marginTop="@dimen/button_size"/>
+
+
+    <EditText
+        android:id="@+id/et_security_code"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_border"
+        android:layout_marginLeft="@dimen/button_size"
+        android:layout_marginRight="@dimen/button_size"
+        android:padding="@dimen/padding_8dp"
+        android:hint="Security Code"
+        android:textAlignment="center"
+        android:layout_marginTop="16dp"
+        android:textSize="24sp"
+        android:maxLength="6"
+        android:inputType="numberPassword"
+        android:layout_below="@+id/txt_title"
+        android:gravity="center_horizontal" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4sp"
+        android:layout_below="@+id/et_security_code"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="parent">
+
+        <Button
+            android:id="@+id/btn_save_post"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:fontFamily="@font/notosans"
+            android:text="@string/txt_continue"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/txt_teacher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teacher Mode"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/card1"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/proximanovaregular"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/button_size"/>
+
+</RelativeLayout>

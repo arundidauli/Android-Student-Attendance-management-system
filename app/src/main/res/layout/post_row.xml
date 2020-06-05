@@ -16,8 +16,8 @@
             android:id="@+id/post_image"
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:scaleType="centerCrop"
-            android:src="@mipmap/sapna"
+            android:scaleType="fitXY"
+            android:src="@mipmap/play_button"
             android:contentDescription="@string/app_name" />
         <TextView
             android:id="@+id/post_title"
@@ -56,24 +56,43 @@
             android:layout_marginBottom="@dimen/padding_8dp"
             android:layout_below="@id/post_detail">
 
-            <TextView
-                android:id="@+id/user_name"
+            <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_views"
                 android:padding="@dimen/padding_4sp"
+                android:tint="@color/green"/>
+            <TextView
+                android:id="@+id/post_views"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/padding_4sp"
+                android:paddingBottom="@dimen/padding_4sp"
+                android:paddingLeft="@dimen/padding_8dp"
+                android:paddingRight="@dimen/padding_8dp"
                 android:fontFamily="@font/notosans"
                 android:textSize="12sp"
-                android:text="By Arun Kumar"/>
-            <TextView
-                android:id="@+id/date"
+                android:text="2k"/>
+            <ImageView
+                android:id="@+id/img_share"
                 android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_share"
+                android:padding="@dimen/padding_4sp"
+                android:tint="@color/green"/>
+            <TextView
+                android:id="@+id/post_date"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:padding="@dimen/padding_4sp"
                 android:fontFamily="@font/notosans"
                 android:textSize="12sp"
                 android:gravity="end"
                 android:layout_gravity="end"
+                android:layout_weight="1"
                 android:text="20-Mar-2020"/>
+
+
 
         </LinearLayout>
     </RelativeLayout>

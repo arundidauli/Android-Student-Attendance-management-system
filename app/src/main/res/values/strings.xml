@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Mera Jilaa</string>
+    <string name="app_name">Student Attendance</string>
 
     <string name="profile_desc">Rowan Sebastian Atkinson CBE is an English actor,  comedian and screenwriter</string>
     <string name="profile_title">Mr Bean</string>
@@ -41,6 +41,37 @@
     <string name="openDrawer">open_drawer</string>
     <string name="closeDrawer">close_drawer</string>
     <string name="title_activity_navigation_drawer">NavigationDrawer</string>
-    <string name="post_details">सपना चौधरी के Husband के बारे में जाने सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी के Husband के बारे में जाने सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में</string>
-    <string name="post_title">सपना चौधरी ने रचाई शादी, जाने उनके होने बाले Husband के बारे में</string>
+    <string name="post_details">Post Details</string>
+    <string name="post_title">Post Title</string>
+    <string name="view_all_category">View All Category</string>
+    <string name="government_officers">Government Officers</string>
+    <string name="latest">Latest</string>
+    <string name="view_all">View All</string>
+    <string name="select_your_category">Select Your Category</string>
+    <string name="upload_your_post_image">Upload Your Post Image</string>
+    <string name="heading_title">Heading/Title</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="submit">Submit</string>
+    <string name="add_post">Add Post</string>
+    <string name="ambulance_service">Ambulance Service</string>
+    <string name="sai_ambulance_service_moradabad">Sai Ambulance Service Moradabad</string>
+    <string name="moradabad">Moradabad</string>
+    <string name="price_on_call">Price On Call</string>
+    <string name="loading">Please wait...</string>
+    <string name="txt_no_record_found">No Record Found</string>
+    <string name="user_profile">User Profile</string>
+    <string name="cancel">Cancel</string>
+    <string name="update_post">Update Post</string>
+    <string name="txt_post_details">Post Details</string>
+    <string name="txt_update_post">Update Post</string>
+    <string name="txt_delete">Delete</string>
+    <string name="txt_logout">Logout</string>
+    <string name="txt_gallery">Gallery</string>
+    <string name="admin_panel">Admin Panel</string>
+    <string name="post_type">Post Type</string>
+    <string name="video_url_optional">Video Url (Optional)</string>
+    <string name="txt_continue">Continue</string>
+    <string name="txt_pending">Pending</string>
+    <string name="your_all_post">Your All Post</string>
+    <string name="txt_approvedd">Approved</string>
 </resources>

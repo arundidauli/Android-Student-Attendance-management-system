@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.activities.AdminPanel">
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:text="@string/admin_panel"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp" />
+        <TextView
+            android:id="@+id/txt_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/padding_8dp"
+            android:layout_marginRight="@dimen/padding_8dp"
+            android:background="@drawable/orange_border"
+            android:fontFamily="@font/proximanovaregular"
+            android:paddingLeft="16dp"
+            android:paddingTop="@dimen/padding_4sp"
+            android:paddingRight="16dp"
+            android:paddingBottom="@dimen/padding_4sp"
+            android:text="@string/txt_logout"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <com.jaredrummler.materialspinner.MaterialSpinner
+        android:id="@+id/spinner_sort_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:padding="@dimen/padding_8dp"
+        android:textSize="18sp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_user_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_sort_by"
+        android:layout_marginBottom="50dp" />
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_add_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="16dp"
+        android:tint="@color/white"
+        app:srcCompat="@drawable/ic_add" />
+
+
+    <TextView
+        android:id="@+id/txt_no_data"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="@dimen/padding_8dp"
+        android:text="@string/txt_no_record_found"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+</RelativeLayout>

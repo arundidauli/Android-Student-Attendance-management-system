@@ -1,0 +1,159 @@
+{
+  "project_info": {
+    "project_number": "829135991495",
+    "firebase_url": "https://mera-zila.firebaseio.com",
+    "project_id": "mera-zila",
+    "storage_bucket": "mera-zila.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829135991495:android:234dd865650ee1bae584e2",
+        "android_client_info": {
+          "package_name": "com.iteyes.placesproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTR4nGZn4NgjVk97Vcl8jU1E4K6iZ73WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829135991495:android:2402bcc9b594ac0be584e2",
+        "android_client_info": {
+          "package_name": "com.tech.attend.student"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829135991495-dhqc3kk121vije2mbtupabhvivjefq26.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tech.attend.student",
+            "certificate_hash": "c0ff11b3044e8fa0304d687c417a51561a423e4b"
+          }
+        },
+        {
+          "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTR4nGZn4NgjVk97Vcl8jU1E4K6iZ73WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829135991495:android:ffe5768bf58f624de584e2",
+        "android_client_info": {
+          "package_name": "com.techastrum.merajilaa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829135991495-p4uptspcqgcjr7mcqbcg9iqied6lvin5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techastrum.merajilaa",
+            "certificate_hash": "c0ff11b3044e8fa0304d687c417a51561a423e4b"
+          }
+        },
+        {
+          "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTR4nGZn4NgjVk97Vcl8jU1E4K6iZ73WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829135991495:android:bea33a0284b52b57e584e2",
+        "android_client_info": {
+          "package_name": "com.techastrum.wavecar"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "829135991495-p43mle6f9qv53ejqdidp4fi5s8a8da11.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techastrum.wavecar",
+            "certificate_hash": "4b33fd792219126fa642ba346a9263e2d840177f"
+          }
+        },
+        {
+          "client_id": "829135991495-fuu17r7evm0p2lqb0lbufhcrchphfpi7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.techastrum.wavecar",
+            "certificate_hash": "c0ff11b3044e8fa0304d687c417a51561a423e4b"
+          }
+        },
+        {
+          "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTR4nGZn4NgjVk97Vcl8jU1E4K6iZ73WI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "829135991495-v06qtbavuarnn00pcrousi12cvobg0i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
