@@ -14,7 +14,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
-        android:name="com.techastrum.attendance.activities.AppController"
+        android:name=".activities.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launche1"
         android:label="@string/app_name"
@@ -22,35 +22,38 @@
         android:roundIcon="@mipmap/ic_launche1"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.SelectTimeActivity"></activity>
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.SelectDateActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.ViewAttendanceActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.ViewStudentsActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.TakeAttendanceActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.TeacherPanelActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.AddTeacherActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.ViewAllTeacherActivity" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.ViewAllStudentActivity" />
-        <activity android:name="com.techastrum.attendance.activities.activities.Merazila" />
-        <activity android:name="com.techastrum.attendance.activities.activities.SecurityActivity" />
-        <activity android:name="com.techastrum.attendance.activities.activities.AdminPost" />
-        <activity android:name="com.techastrum.attendance.activities.activities.AdminPanel" />
-        <activity android:name="com.techastrum.attendance.activities.activities.UpdatePost" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.ViewAllClasses" />
-        <activity android:name="com.techastrum.attendance.activities.activities.UserProfile" />
-        <activity android:name="com.techastrum.attendance.activities.activities.ShopActivity" />
-        <activity android:name="com.techastrum.attendance.activities.activities.AdvanceSearch" />
-        <activity android:name="com.techastrum.attendance.activities.activities.UserLogin" />
-        <activity android:name="com.techastrum.attendance.activities.student_attandence.AddStudent" />
-        <activity android:name="com.techastrum.attendance.activities.activities.DetailActivity" />
+        <activity android:name=".activities.student_attandence.StudentOtherActivity"></activity>
+        <activity android:name=".activities.student_attandence.ViewDailyReportActivity" />
+        <activity android:name=".activities.student_attandence.StudentPositionActivity" />
+        <activity android:name=".activities.student_attandence.SelectTimeActivity" />
+        <activity android:name=".activities.student_attandence.SelectDateActivity" />
+        <activity android:name=".activities.student_attandence.ViewAttendanceActivity" />
+        <activity android:name=".activities.student_attandence.ViewStudentsActivity" />
+        <activity android:name=".activities.student_attandence.TakeAttendanceActivity" />
+        <activity android:name=".activities.student_attandence.TeacherPanelActivity" />
+        <activity android:name=".activities.student_attandence.AddTeacherActivity" />
+        <activity android:name=".activities.student_attandence.ViewAllTeacherActivity" />
+        <activity android:name=".activities.student_attandence.ViewAllStudentActivity" />
+        <activity android:name=".activities.activities.Merazila" />
+        <activity android:name=".activities.activities.SecurityActivity" />
+        <activity android:name=".activities.activities.AdminPost" />
+        <activity android:name=".activities.student_attandence.StudentActivities" />
+        <activity android:name=".activities.activities.UpdatePost" />
+        <activity android:name=".activities.student_attandence.ViewAllClasses" />
+        <activity android:name=".activities.activities.UserProfile" />
+        <activity android:name=".activities.activities.ShopActivity" />
+        <activity android:name=".activities.activities.AdvanceSearch" />
+        <activity android:name=".activities.activities.UserLogin" />
+        <activity android:name=".activities.student_attandence.AddStudent" />
+        <activity android:name=".activities.activities.DetailActivity" />
         <activity
-            android:name="com.techastrum.attendance.activities.student_attandence.HomeActivity"
+            android:name=".activities.student_attandence.HomeActivity"
             android:label="@string/title_activity_home"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="stateHidden" />
-        <activity android:name="com.techastrum.attendance.activities.activities.ImagePickerActivity" />
+        <activity android:name=".activities.activities.ImagePickerActivity" />
         <activity
-            android:name="com.techastrum.attendance.activities.activities.SplashScreen"
+            android:name=".activities.activities.SplashScreen"
             android:theme="@style/AppTheme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -58,8 +61,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.techastrum.attendance.activities.activities.DistActivity" />
-        <activity android:name="com.techastrum.attendance.activities.activities.MainActivity" />
+        <activity android:name=".activities.activities.DistActivity" />
+        <activity android:name=".activities.activities.MainActivity" />
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="fullSensor"

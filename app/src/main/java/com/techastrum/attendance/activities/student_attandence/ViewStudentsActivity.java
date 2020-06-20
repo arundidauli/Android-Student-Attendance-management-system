@@ -23,6 +23,7 @@ import com.techastrum.attendance.activities.Util.Constants;
 import com.techastrum.attendance.activities.Util.Prefs;
 import com.techastrum.attendance.activities.adapter.ViewStudentAdapter;
 import com.techastrum.attendance.activities.model.Attendance;
+import com.techastrum.attendance.activities.model.Student;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +32,7 @@ import java.util.Objects;
 public class ViewStudentsActivity extends AppCompatActivity {
     private static String TAG = ViewStudentsActivity.class.getSimpleName();
     private Context context;
-    private List<Attendance> student_List;
+    private List<Student> student_List;
     private ProgressDialog progressDialog;
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference mDatabaseReference;
@@ -77,7 +78,7 @@ public class ViewStudentsActivity extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     if (ds.exists()) {
                         if (Objects.equals(ds.child("student_class").getValue(String.class), student_class)){
-                            Attendance student = ds.getValue(Attendance.class);
+                            Student student = ds.getValue(Student.class);
                             student_List.add(student);
                         }
 

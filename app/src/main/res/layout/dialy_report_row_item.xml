@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/padding_4sp"
+    app:cardUseCompatPadding="true"
+    app:cardElevation="3sp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/ambulance_service"
+            android:padding="@dimen/padding_4sp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_toLeftOf="@+id/txt_date"
+            android:textColor="@color/black"
+            android:layout_marginTop="@dimen/padding_4sp"
+            android:fontFamily="@font/proximanovaregular"
+            android:layout_marginLeft="@dimen/padding_8dp"
+            android:layout_marginStart="@dimen/padding_8dp"
+             />
+        <TextView
+            android:id="@+id/txt_des"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/sai_ambulance_service_moradabad"
+            android:padding="@dimen/padding_4sp"
+            android:textColor="@color/black"
+            android:justificationMode="inter_word"
+            android:lineSpacingExtra="8sp"
+            android:fontFamily="@font/proximanovaregular"
+            android:layout_below="@+id/txt_title"
+            android:layout_marginLeft="@dimen/padding_8dp"
+            android:layout_marginStart="@dimen/padding_8dp"
+            />
+
+
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/06/2020"
+            android:paddingTop="@dimen/padding_4sp"
+            android:paddingBottom="@dimen/padding_4sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="@dimen/padding_8dp"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="12sp"
+            android:layout_marginRight="@dimen/padding_8dp"
+            android:fontFamily="@font/proximanovaregular"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/padding_8dp" />
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

@@ -41,6 +41,7 @@ import com.techastrum.attendance.activities.Util.Prefs;
 import com.techastrum.attendance.activities.activities.ImagePickerActivity;
 import com.techastrum.attendance.activities.model.Attendance;
 import com.techastrum.attendance.activities.model.Post;
+import com.techastrum.attendance.activities.model.Student;
 
 import java.io.IOException;
 import java.util.List;
@@ -281,16 +282,15 @@ public class AddStudent extends AppCompatActivity {
 
     private void saveStudent() {
         String id = mDatabaseReference.child("student").push().getKey();
-        Attendance user_post = new Attendance();
+        Student user_post = new Student();
         user_post.setId(id);
-        user_post.setStudent_photo(IMAGE_URL);
+        user_post.setStudent_image(IMAGE_URL);
         user_post.setStudent_name(et_title.getText().toString());
         user_post.setStudent_father_name(et_details.getText().toString());
         user_post.setStudent_class(et_category.getText().toString());
         user_post.setStudent_roll_no(et_contact.getText().toString());
-        user_post.setAttendance_date("hjkhjkh");
-        user_post.setAttendance_time("lkjlkj");
-        user_post.setPresent(false);
+        user_post.setStudent_activities("jhjh");
+        user_post.setStudent_position("99");
         mDatabaseReference.child("student").child(id).setValue(user_post);
         Toast.makeText(getApplicationContext(), "Student Add successfully", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(getApplicationContext(), ViewAllStudentActivity.class);

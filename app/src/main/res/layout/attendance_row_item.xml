@@ -66,6 +66,27 @@
             android:layout_toEndOf="@+id/student_image" />
 
         <TextView
+            android:id="@+id/txt_absent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Absent"
+            android:paddingTop="@dimen/padding_4sp"
+            android:paddingBottom="@dimen/padding_4sp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:layout_marginTop="@dimen/padding_8dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="12sp"
+            android:layout_marginRight="@dimen/padding_8dp"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/present_border"
+            android:fontFamily="@font/proximanovaregular"
+
+            android:layout_above="@+id/txt_present"
+            android:layout_marginEnd="@dimen/padding_8dp"
+            android:layout_alignParentRight="true" />
+
+        <TextView
             android:id="@+id/txt_present"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +105,6 @@
             android:layout_below="@+id/txt_student_class"
             android:layout_alignParentRight="true"
             android:layout_marginEnd="@dimen/padding_8dp" />
-
 
 
     </RelativeLayout>

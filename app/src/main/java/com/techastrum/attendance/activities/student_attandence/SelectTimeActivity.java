@@ -13,6 +13,7 @@ import android.widget.TimePicker;
 
 import com.techastrum.attendance.R;
 import com.techastrum.attendance.activities.Util.Constants;
+import com.techastrum.attendance.activities.Util.Prefs;
 import com.techastrum.attendance.activities.Util.RangeTimePickerDialog;
 
 import java.text.DateFormat;
@@ -62,6 +63,8 @@ public class SelectTimeActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intent.putExtra(Constants.DATE,M_date);
             intent.putExtra(Constants.TIME,txt_select.getText().toString());
+            Prefs.getInstance(context).SetValue(Constants.TIME,txt_select.getText().toString());
+
             startActivity(intent);
         });
     }

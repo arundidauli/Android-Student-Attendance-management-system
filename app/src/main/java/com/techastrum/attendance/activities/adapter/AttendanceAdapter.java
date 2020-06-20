@@ -58,20 +58,26 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
         holder.txt_student_name.setText(studentList.get(position).getStudent_name());
         holder.txt_roll_no.setText(String.format("Roll No: %s", studentList.get(position).getStudent_roll_no()));
 
+        holder.txt_absent.setOnClickListener(v -> {
+            UpdateAttendance(position,false);
+            AddAttendance(position,false);
 
+        });
+
+        holder.txt_present.setOnClickListener(v -> {
+            UpdateAttendance(position,true);
+            AddAttendance(position,true);
+
+        });
         if (studentList.get(position).isPresent()){
-            holder.txt_present.setText("Present");
-            holder.txt_present.setOnClickListener(v -> {
-                UpdateAttendance(position,false);
+            holder.txt_present.setBackgroundResource(R.drawable.green_border_heavy);
+            holder.txt_absent.setBackgroundResource(R.drawable.green_border);
 
-            });
         }
         else {
-            holder.txt_present.setText("Absent");
+            holder.txt_absent.setBackgroundResource(R.drawable.green_border_heavy);
+            holder.txt_present.setBackgroundResource(R.drawable.green_border);
 
-            holder.txt_present.setOnClickListener(v -> {
-                UpdateAttendance(position,true);
-            });
         }
 
 
@@ -86,11 +92,12 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
-        private TextView  txt_student_name, txt_student_class,txt_roll_no,txt_present;
+        private TextView  txt_student_name, txt_student_class,txt_roll_no,txt_present,txt_absent;
         private ImageView student_image,img_edit;
 
         MyViewHolder(View view) {
             super(view);
+            txt_absent=view.findViewById(R.id.txt_absent);
             txt_present=view.findViewById(R.id.txt_present);
             student_image=view.findViewById(R.id.student_image);
             txt_student_name=view.findViewById(R.id.txt_student_name);
@@ -116,6 +123,26 @@ public class AttendanceAdapter extends RecyclerView.Adapter<AttendanceAdapter.My
         user_post.setAttendance_time(m_time);
         user_post.setPresent(is_true);
         mDatabaseReference.child(studentList.get(position).getId()).setValue(user_post);
+        Intent intent = new Intent(context, TakeAttendanceActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        context.startActivity(intent);
+    }
+    private void AddAttendance(int position,boolean is_true) {
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        mDatabaseReference = firebaseDatabase.getReference("attendance");
+        Attendance user_post = new Attendance();
+        user_post.setId(studentList.get(position).getId());
+        user_post.setStudent_photo(studentList.get(position).getStudent_photo());
+        user_post.setStudent_name(studentList.get(position).getStudent_name());
+        user_post.setStudent_father_name(studentList.get(position).getStudent_father_name());
+        user_post.setStudent_class(studentList.get(position).getStudent_class());
+        user_post.setStudent_roll_no(studentList.get(position).getStudent_roll_no());
+        user_post.setAttendance_date(m_date);
+        user_post.setAttendance_time(m_time);
+        user_post.setPresent(is_true);
+        mDatabaseReference.child(m_date.substring(0,2)+studentList.get(position).getStudent_roll_no()).setValue(user_post);
         Intent intent = new Intent(context, TakeAttendanceActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);

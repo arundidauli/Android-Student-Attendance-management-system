@@ -41,6 +41,7 @@ import com.techastrum.attendance.activities.Util.Constants;
 import com.techastrum.attendance.activities.Util.Helper;
 import com.techastrum.attendance.activities.Util.Prefs;
 import com.techastrum.attendance.activities.model.Post;
+import com.techastrum.attendance.activities.student_attandence.StudentActivities;
 import com.techastrum.attendance.activities.student_attandence.ViewAllClasses;
 
 import java.io.IOException;
@@ -322,7 +323,7 @@ public class AdminPost extends AppCompatActivity {
         mDatabaseReference.child("post").child(id).setValue(user_post);
 
         Toast.makeText(getApplicationContext(), "Post Submitted", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(getApplicationContext(), AdminPanel.class);
+        Intent intent = new Intent(getApplicationContext(), StudentActivities.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
@@ -350,7 +351,7 @@ public class AdminPost extends AppCompatActivity {
         user_post.setIs_approve(true);
         mDatabaseReference.child("post").child(id).setValue(user_post);
         Toast.makeText(getApplicationContext(), "Post Updated", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(getApplicationContext(), AdminPanel.class);
+        Intent intent = new Intent(getApplicationContext(), StudentActivities.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);

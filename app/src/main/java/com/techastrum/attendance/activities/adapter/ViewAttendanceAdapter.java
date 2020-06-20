@@ -58,13 +58,16 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
         holder.txt_student_name.setText(studentList.get(position).getStudent_name());
         holder.txt_roll_no.setText(String.format("Roll No: %s", studentList.get(position).getStudent_roll_no()));
 
-       /* holder.txt_present.setOnClickListener(v -> {
-            UpdateAttendance(position,true);
-        });
-        holder.txt_absent.setOnClickListener(v -> {
-            UpdateAttendance(position,false);
+        if (studentList.get(position).isPresent()){
+            holder.txt_present.setBackgroundResource(R.drawable.green_border_heavy);
+            holder.txt_absent.setVisibility(View.GONE);
 
-        });*/
+        }
+        else {
+            holder.txt_absent.setBackgroundResource(R.drawable.green_border_heavy);
+            holder.txt_present.setVisibility(View.GONE);
+
+        }
 
 
     }
@@ -82,7 +85,7 @@ public class ViewAttendanceAdapter extends RecyclerView.Adapter<ViewAttendanceAd
         MyViewHolder(View view) {
             super(view);
             txt_present=view.findViewById(R.id.txt_present);
-          ///  txt_absent=view.findViewById(R.id.txt_absent);
+            txt_absent=view.findViewById(R.id.txt_absent);
             student_image=view.findViewById(R.id.student_image);
             txt_student_name=view.findViewById(R.id.txt_student_name);
             txt_student_class=view.findViewById(R.id.txt_student_class);

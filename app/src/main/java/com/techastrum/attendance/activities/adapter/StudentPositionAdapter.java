@@ -20,21 +20,21 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.jaredrummler.materialspinner.MaterialSpinner;
 import com.techastrum.attendance.R;
-import com.techastrum.attendance.activities.model.Attendance;
 import com.techastrum.attendance.activities.model.Student;
 import com.techastrum.attendance.activities.student_attandence.StudentActivities;
 import com.techastrum.attendance.activities.student_attandence.ViewAllStudentActivity;
 
 import java.util.List;
 
-public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.MyViewHolder>  {
+public class StudentPositionAdapter extends RecyclerView.Adapter<StudentPositionAdapter.MyViewHolder>  {
     private Context context;
     private List<Student> studentList;
     private String[] arr = {"Select Position", "Position A", "Position B","Position C", "Position D"};
     private FirebaseDatabase firebaseDatabase;
     private DatabaseReference mDatabaseReference;
     private FirebaseAuth firebaseAuth;
-    public ViewStudentAdapter(Context context, List<Student> studentList) {
+
+    public StudentPositionAdapter(Context context, List<Student> studentList) {
         this.context = context;
         this.studentList = studentList;
     }
@@ -45,7 +45,7 @@ public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.view_student_row_item, parent, false);
+                .inflate(R.layout.view_student_activity_row_item, parent, false);
 
         return new MyViewHolder(itemView);
     }
@@ -58,7 +58,6 @@ public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.
         holder.txt_student_class.setText(String.format("Class: %s", studentList.get(position).getStudent_class()));
         holder.txt_student_name.setText(studentList.get(position).getStudent_name());
         holder.txt_roll_no.setText(String.format("Roll No: %s", studentList.get(position).getStudent_roll_no()));
-
         holder.SortBy.setText(studentList.get(position).getStudent_position());
 
 
@@ -102,8 +101,8 @@ public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.
         holder.SortBy.getPopupWindow();
 
 
-
     }
+
 
 
     private void UpdateStudent(int position,String position_or_activities) {
@@ -139,8 +138,7 @@ public class ViewStudentAdapter extends RecyclerView.Adapter<ViewStudentAdapter.
 
         MyViewHolder(View view) {
             super(view);
-            SortBy = view.findViewById(R.id.spinner_position);
-
+            SortBy = view.findViewById(R.id.spinner_sort_by);
             txt_delete=view.findViewById(R.id.txt_delete);
             img_edit=view.findViewById(R.id.img_edit);
             student_image=view.findViewById(R.id.student_image);

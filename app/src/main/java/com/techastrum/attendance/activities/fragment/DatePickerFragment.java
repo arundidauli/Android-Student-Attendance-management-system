@@ -1,17 +1,27 @@
-package com.techastrum.attendance.activities.student_attandence;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.techastrum.attendance.activities.fragment;
 
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.Fragment;
 
 import com.techastrum.attendance.R;
 import com.techastrum.attendance.activities.Util.Constants;
 import com.techastrum.attendance.activities.Util.Prefs;
+import com.techastrum.attendance.activities.student_attandence.SelectDateActivity;
+import com.techastrum.attendance.activities.student_attandence.SelectTimeActivity;
+import com.techastrum.attendance.activities.student_attandence.ViewAttendanceActivity;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.wdullaer.materialdatetimepicker.time.TimePickerDialog;
 
@@ -19,59 +29,76 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class SelectDateActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
+
+public class DatePickerFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
     DatePickerDialog datePickerDialog ;
     TimePickerDialog timePickerDialog ;
     int Year, Month, Day, Hour, Minute;
     Calendar calendar ;
     private Context context;
     private TextView txt_select;
+    private TextView mdate;
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_date);
-        context = SelectDateActivity.this;
-        txt_select=findViewById(R.id.txt_select);
+
+
+    }
+
+    public DatePickerFragment(TextView mdate) {
+        this.mdate = mdate;
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_select_date, container, false);
+        context = getActivity();
+        txt_select=view.findViewById(R.id.txt_select);
         calendar = Calendar.getInstance();
         Year = calendar.get(Calendar.YEAR) ;
         Month = calendar.get(Calendar.MONTH);
         Day = calendar.get(Calendar.DAY_OF_MONTH);
         Hour = calendar.get(Calendar.HOUR_OF_DAY);
-        findViewById(R.id.back_btn).setOnClickListener(v -> {
-            super.onBackPressed();
-        });
 
         SelectDate();
 
 
 
-        findViewById(R.id.txt_select).setOnClickListener(v -> {
+        view.findViewById(R.id.txt_select).setOnClickListener(v -> {
             SelectDate();
         });
 
-        findViewById(R.id.fab).setOnClickListener(v -> {
-            if (getIntent()!=null){
-                if (getIntent().getStringExtra("view_attendance").equals("yes")){
-                    Intent intent = new Intent(getApplicationContext(), ViewAttendanceActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra(Constants.DATE,txt_select.getText().toString());
-                    Prefs.getInstance(context).SetValue(Constants.DATE,txt_select.getText().toString());
-                    startActivity(intent);
-                }else {
-                    Intent intent = new Intent(getApplicationContext(), SelectTimeActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                    intent.putExtra(Constants.DATE,txt_select.getText().toString());
-                    Prefs.getInstance(context).SetValue(Constants.DATE,txt_select.getText().toString());
-                    startActivity(intent);
-                }
-            }
+        view.findViewById(R.id.fab).setOnClickListener(v -> {
+            getActivity().onBackPressed();
+            mdate.setText(txt_select.getText().toString());
         });
+
+        return view;
+    }
+
+    private void Ride_Cancel() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setMessage("Are you sure want to cancel ?");
+        builder.setCancelable(true);
+        builder.setPositiveButton(
+                "Confirm",
+                (dialog, id) -> {
+                    dialog.cancel();
+                });
+        builder.setNegativeButton(
+                "Cancel",
+                (dialog, id) -> dialog.cancel());
+
+        AlertDialog alert = builder.create();
+        alert.show();
+
     }
 
     private void SelectDate(){
-        datePickerDialog = DatePickerDialog.newInstance(SelectDateActivity.this, Year, Month, Day);
+        datePickerDialog = DatePickerDialog.newInstance(this, Year, Month, Day);
 
         datePickerDialog.setThemeDark(false);
         datePickerDialog.showYearPickerFirst(false);
@@ -103,11 +130,11 @@ public class SelectDateActivity extends AppCompatActivity implements DatePickerD
             @Override
             public void onCancel(DialogInterface dialogInterface) {
 
-                Toast.makeText(SelectDateActivity.this, "Datepicker Canceled", Toast.LENGTH_SHORT).show();
+                Toast.makeText(context, "Datepicker Canceled", Toast.LENGTH_SHORT).show();
             }
         });
 
-        datePickerDialog.show(getFragmentManager(), "DatePickerDialog");
+        datePickerDialog.show(getActivity().getFragmentManager(), "DatePickerDialog");
 
 
     }
@@ -122,5 +149,6 @@ public class SelectDateActivity extends AppCompatActivity implements DatePickerD
         SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.UK);
 
         txt_select.setText(sdf.format(calendar.getTime()));
+        mdate.setText(sdf.format(calendar.getTime()));
     }
 }

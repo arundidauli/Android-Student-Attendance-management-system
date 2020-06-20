@@ -129,9 +129,9 @@ public class SecurityActivity extends AppCompatActivity {
         EditText user_password = dialog.findViewById(R.id.user_password);
         Button btn_save = dialog.findViewById(R.id.btn_save);
         btn_save.setOnClickListener(v -> {
-            if (user_id.getText().toString().length()<6){
+            if (user_id.getText().toString().length()<1){
                 Toasty.info(getApplicationContext(),"Enter a valid User Id", Toast.LENGTH_SHORT,true).show();
-            }else if(user_password.getText().toString().length()<6){
+            }else if(user_password.getText().toString().length()<1){
                 Toasty.info(getApplicationContext(),"Enter a valid Password",Toast.LENGTH_SHORT,true).show();
             }else {
                 TeacherLogin(user_id.getText().toString(),user_password.getText().toString());

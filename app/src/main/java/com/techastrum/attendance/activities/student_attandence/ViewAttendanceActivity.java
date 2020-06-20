@@ -49,7 +49,7 @@ public class ViewAttendanceActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         firebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = firebaseDatabase.getReference("student");
+        mDatabaseReference = firebaseDatabase.getReference("attendance");
 
         if (getIntent()!=null){
             M_Date=getIntent().getStringExtra(Constants.DATE);
@@ -75,12 +75,12 @@ public class ViewAttendanceActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     if (ds.exists()) {
-                        if (Objects.equals(ds.child("student_class").getValue(String.class), student_class)&& Objects.equals(ds.child("attendance_date").getValue(String.class), m_date)){
-                            /*if (Objects.equals(ds.child("attendance_date").getValue(String.class), m_date)){
+                        if (Objects.equals(ds.child("student_class").getValue(String.class), student_class)){
+                            if (Objects.equals(ds.child("attendance_date").getValue(String.class), m_date)){
+                                Attendance student = ds.getValue(Attendance.class);
+                                student_List.add(student);
+                            }
 
-                            }*/
-                            Attendance student = ds.getValue(Attendance.class);
-                            student_List.add(student);
                         }
 
 

@@ -22,7 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.techastrum.attendance.R;
 import com.techastrum.attendance.activities.Util.Constants;
 import com.techastrum.attendance.activities.Util.Helper;
-import com.techastrum.attendance.activities.activities.AdminPanel;
+import com.techastrum.attendance.activities.student_attandence.StudentActivities;
 import com.techastrum.attendance.activities.activities.DetailActivity;
 import com.techastrum.attendance.activities.activities.UpdatePost;
 import com.techastrum.attendance.activities.activities.UserProfile;
@@ -174,7 +174,7 @@ public class AdminPostAdapter extends RecyclerView.Adapter<AdminPostAdapter.MyVi
         user_post.setIs_approve(is_true);
         mDatabaseReference.child(categoryList.get(position).getId()).setValue(user_post);
         Toast.makeText(context, "Post Updated", Toast.LENGTH_LONG).show();
-        Intent intent = new Intent(context, AdminPanel.class);
+        Intent intent = new Intent(context, StudentActivities.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
         context.startActivity(intent);
